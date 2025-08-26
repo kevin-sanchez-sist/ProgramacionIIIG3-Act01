@@ -73,17 +73,18 @@ es_primo(A,B) :-
     es_hombre(A), 
     progenitor_de(C,B),
     es_tio(C,A); 
+    progenitor_de(C,B),
     es_tia(C,A).
     
 es_prima(A,B) :-    
     es_mujer(A), 
     progenitor_de(C,B),
     es_tio(C,A); 
+    progenitor_de(C,B),
     es_tia(C,A).
 
-
-
-
+es_esposo(A,B):- es_hombre(A), papa_de(A,C),mama_de(B,C).
+es_esposa(A,B):- es_mujer(A), papa_de(B,C),mama_de(A,C).
 
 
 
