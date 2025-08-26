@@ -24,6 +24,8 @@ hombre_es(bart).
 hombre_es(herbert).
 
 
+
+
 mujer_es(mona).
 mujer_es(jacqueline).
 mujer_es(patty).
@@ -46,6 +48,10 @@ hermana_es(A,B) :-  A \= B, mujer_es(A),progenitor_de(C,A),progenitor_de(C,B).
 
 tio_es(A,B):- A \= B, hombre_es(A),hermano_es(A,C),progenitor_de(C,B).
 tia_es(A,B):- A \= B, mujer_es(A),progenitor_de(C,B),hermana_es(A,C).
+
+
+primo_es(A,B) :-    hombre_es(A), progenitor_de(C,B),tio_es(C,A); progenitor_de(C,B),tia_es(C,A).
+prima_es(A,B) :-    hombre_es(A), progenitor_de(C,B),tio_es(C,A); progenitor_de(C,B),tia_es(C,A).
 
 
 
