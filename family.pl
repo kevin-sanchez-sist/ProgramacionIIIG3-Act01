@@ -31,17 +31,18 @@ es_mujer(marge).
 es_mujer(selma).
 es_mujer(lisa).
 es_mujer(maggie).
-es_mujer(selma).
 es_mujer(ling).
 
 progenitor_de(A,B):-papa_de(A,B).
 progenitor_de(A,B):-mama_de(A,B).
 
-abuelo_de(A,B) :- 
+abuelo_de(A,B) :-
+    es_hombre(A),
     papa_de(C,B) , 
     progenitor_de(A,C).
 
-abuela_de(A,B):- 
+abuela_de(A,B):-
+    es_mujer(A),
     mama_de(C,B),
     progenitor_de(A,C).
 
