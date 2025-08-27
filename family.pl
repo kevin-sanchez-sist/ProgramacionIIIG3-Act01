@@ -38,12 +38,12 @@ progenitor_de(A,B):-mama_de(A,B).
 
 abuelo_de(A,B) :-
     es_hombre(A),
-    papa_de(C,B) , 
+    progenitor_de(C,B) , 
     progenitor_de(A,C).
 
 abuela_de(A,B):-
     es_mujer(A),
-    mama_de(C,B),
+    progenitor_de(C,B),
     progenitor_de(A,C).
 
 es_hermano(A,B) :- 
@@ -61,13 +61,13 @@ es_hermana(A,B) :-
 
 es_tio(A,B):-  
     es_hombre(A),
-    hermano_es(A,C),
+    es_hermano(A,C),
     progenitor_de(C,B).
 
 es_tia(A,B):- 
     es_mujer(A),
     progenitor_de(C,B),
-    hermana_es(A,C).
+    es_hermana(A,C).
 
 
 es_primo(A,B) :-    
