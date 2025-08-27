@@ -46,17 +46,17 @@ abuela_de(A,B):-
     mama_de(C,B),
     progenitor_de(A,C).
 
-es_hermano(A,B) :-  
-    A \= B,
+es_hermano(A,B) :- 
     es_hombre(A),
     progenitor_de(C,A),
-    progenitor_de(C,B).
+    progenitor_de(C,B),
+    A \= B.
 
 es_hermana(A,B) :-  
-    A \= B, 
     es_mujer(A),
     progenitor_de(C,A),
-    progenitor_de(C,B).
+    progenitor_de(C,B),
+    A \= B.
 
 
 es_tio(A,B):-  
