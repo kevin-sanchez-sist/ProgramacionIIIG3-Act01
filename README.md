@@ -25,7 +25,7 @@ Probar que el Coronel West es criminal porque:
 ## Archivos del proyecto
 - `family.pl` - Base de datos de la familia Simpson
 - `legal.pl` - Reglas del sistema legal
-- `queries.pl` - Ejemplos de consultas para probar
+- `queries.md` - Ejemplos de consultas para probar
 
 ## Cómo usar
 1. Abrir SWI-Prolog
